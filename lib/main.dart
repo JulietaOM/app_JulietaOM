@@ -25,8 +25,8 @@ class _GameScreenState extends State<GameScreen> {
   String getHint(int diff) {
     if (diff == 0) return "🎯 EXACTO";
     if (diff <= 10) return "🔥 ARDIENDO";
-    if (diff <= 30) return "☀️ CALIENTE";
-    if (diff <= 80) return "🌤️ TIBIO";
+    if (diff <= 25) return "☀️ CALIENTE";
+    if (diff <= 50) return "🌤️ TIBIO";
     return "❄️ FRÍO";
   }
 
@@ -87,13 +87,12 @@ class _GameScreenState extends State<GameScreen> {
       });
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF101018),
+      backgroundColor: const Color.fromARGB(0, 162, 60, 60),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF101018),
+        backgroundColor: const Color.fromARGB(255, 65, 145, 207),
         elevation: 0,
         title: const Text("NumeroX"),
         centerTitle: true,
@@ -107,11 +106,10 @@ class _GameScreenState extends State<GameScreen> {
             const Text(
               "Adivina el número entre 1 y 1000",
               style: TextStyle(
-                color: Colors.white70,
+                color: Color.fromARGB(255, 0, 0, 0),
                 fontSize: 16,
               ),
             ),
-
             const SizedBox(height: 25),
 
             Row(
@@ -125,7 +123,7 @@ class _GameScreenState extends State<GameScreen> {
                       hintText: "Tu número",
                       hintStyle: const TextStyle(color: Colors.white38),
                       filled: true,
-                      fillColor: const Color(0xFF1B1B2D),
+                      fillColor: const Color.fromARGB(255, 6, 73, 150),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                         borderSide: BorderSide.none,
@@ -137,17 +135,16 @@ class _GameScreenState extends State<GameScreen> {
                 ElevatedButton(
                   onPressed: checkNumber,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.amber,
+                    backgroundColor:  const Color.fromARGB(255, 65, 145, 207),
                     padding: const EdgeInsets.all(18),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                  child: const Icon(Icons.arrow_forward, color: Colors.black),
+                  child: const Icon(Icons.arrow_forward, color: Color.fromARGB(255, 0, 0, 0)),
                 )
               ],
             ),
-
             const SizedBox(height: 20),
 
             Expanded(
@@ -160,7 +157,7 @@ class _GameScreenState extends State<GameScreen> {
                     margin: const EdgeInsets.only(bottom: 12),
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1B1B2D),
+                      color: const Color.fromARGB(255, 6, 73, 150),
                       borderRadius: BorderRadius.circular(18),
                     ),
                     child: Column(
@@ -186,7 +183,6 @@ class _GameScreenState extends State<GameScreen> {
                             ),
                           ],
                         ),
-
                         const SizedBox(height: 10),
 
                         ClipRRect(
@@ -194,7 +190,7 @@ class _GameScreenState extends State<GameScreen> {
                           child: LinearProgressIndicator(
                             value: item['proximity'],
                             minHeight: 8,
-                            backgroundColor: Colors.white10,
+                            backgroundColor: const Color.fromARGB(0, 0, 0, 0),
                             valueColor:
                                 AlwaysStoppedAnimation(item['color']),
                           ),
