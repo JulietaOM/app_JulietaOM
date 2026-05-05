@@ -7,9 +7,9 @@ La app crea una variable llamada secret que elige un número aleatorio que se de
 Para obtener la pista se usa la función getHint, que convierte la diferencia en una pista, y la función getColor la cual asigna color a la pista. 
 
 En cada intento se guarda en una lista: (ejemplo)
-numero: 500
-hint: ardiendo
-color: color.red
-proximity: 0.9
+numero: 500, 
+hint: ardiendo, 
+color: color.red, 
+proximity: 0.9, 
 
 Para la apariencia de la app se usa scaffold para la estructura como el app bar donde está el título, se utilizan columnas para acomodar el cuerpo, al igual que se utiliza el text field para ingresar el texto y el botón para correr el programa, se usa una vista de lista para mostrar los intentos con su información y una barra de proximidad. 
